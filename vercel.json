@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/create-checkout-session/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}
