@@ -24,14 +24,16 @@ export async function POST(request: NextRequest) {
     // Usar el primer precio activo (o podrías filtrar por moneda)
     const priceId = prices.data[0].id;
 
+    const origin = request.headers.get('origin') || 'https://tuapp.com';
+    
     const session = await stripe.checkout.sessions.create({
       line_items: [{
         price: priceId,
         quantity: quantity
       }],
       mode: 'payment',
-      success_url: `${request.headers.get('origin')}/success`,
-      cancel_url: `${request.headers.get('origin')}/cancel`,
+      success_url: `${origin}/success`,
+      cancel_url: `${origin}/cancel`,
       locale: 'es',
     });
 
