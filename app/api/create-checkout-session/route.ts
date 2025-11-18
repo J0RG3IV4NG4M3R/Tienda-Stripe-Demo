@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       mode: 'payment',
       success_url: `${origin}/success`,
       cancel_url: `${origin}/cancel`,
-      locale: 'es',
+      locale: 'es-419', // Español de Latinoamérica - formato mexicano
     });
 
     return NextResponse.json({ url: session.url });

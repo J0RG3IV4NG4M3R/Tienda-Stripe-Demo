@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       mode: 'payment',
       success_url: successUrl || `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl || `${origin}/cancel`,
-      locale: 'es',
+      locale: 'es-419', // Español de Latinoamérica - formato mexicano
       metadata: metadata,
       custom_fields: [
         {
